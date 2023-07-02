@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html {
+            font-size: 10px;
+        }
+
+        body {
+            background-image: url('https://img.freepik.com/premium-photo/abstract-connected-dots-lines-blue-background-communication-technology-network-concept-with-moving-lines-dots_34629-1120.jpg'); /* Replace 'your-image-url.jpg' with the URL or path to your desired background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Add background-attachment: fixed to make the image perfectly fixed */
+            margin: 0;
+            padding: 0 10rem; /* Add padding to create empty space on left and right sides */
+        }
+
+        :root {
+            --font-size-caption: 18px; /* Define the font size for the caption button */
+            --navbar-size: 60px; /* Define the height of the navigation bar */
+            --navbar-font-size: 24px; /* Define the font size of the navigation bar text */
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7); /* Change the background color with an appropriate alpha value */
+            padding: 1.3rem;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--navbar-size); /* Set the height of the navigation bar using the CSS variable */
+            z-index: 999;
+        }
+
+        .navbar__brand {
+            font-weight: bold;
+            font-size: var(--navbar-font-size); /* Use the CSS variable for the font size of the navigation bar text */
+            margin-left: 1.3rem;
+            color: aqua;
+        }
+
+        .navbar__links {
+            display: flex;
+        }
+
+        .navbar__links a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 1rem;
+            transition: color 0.6s ease;
+            padding-left: 3rem;
+            font-size: var(--navbar-font-size); /* Use the CSS variable for the font size of the navigation bar text */
+        }
+
+        .navbar__links a:last-child {
+            margin-right: 2rem; /* Add additional margin after the last link */
+        }
+
+        .navbar__links a:hover {
+            color: #FA5F55;
+        }
+
+        .abc {
+            text-align: center;
+            font-style: italic;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            color: aqua;
+            margin-top: 10rem;
+            margin-bottom: 1rem;
+            font-size: var(--font-size-caption); /* Use the CSS variable for the caption button font size */
+        }
+
+        form {
+            display: block;
+            position: absolute;
+            width: 600px;
+            height: 300px;
+            margin: 15% auto;
+            background-color: #3a758998; /* Change the background color with an appropriate alpha value */
+            padding: 2rem;
+            border-radius: 5px;
+        }
+
+        .pqr {
+            background-color: rgba(198, 232, 248, 0.788);
+            margin-top: 2rem;
+            width: 70%;
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .box {
+            margin:  auto;
+            max-width: 1200px; /* Adjust the maximum width of the content */
+        }
+
+        .xyz {
+            display: block;
+            height: 50px;
+            width: 150px;
+            background-color: #06bcfb; /* Change the background color */
+            color: black;
+            font-size: var(--font-size-caption); /* Use the CSS variable for the caption button font size */
+            margin-top: 2rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #resetbtn {
+            display: block;
+            height: 50px;
+            width: 150px;
+            background-color: #06bcfb; /* Change the background color */
+            color: black;
+            font-size: var(--font-size-caption); /* Use the CSS variable for the caption button font size */
+            margin-top: 1rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#resetbtn').on('click', function (e) {
+                var $el = $('#infileid');
+                $el.wrap('<form>').closest(
+                    'form').get(0).reset();
+                $el.unwrap();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="box">
+        <nav class="navbar">
+            <div class="navbar__brand">Image Caption Generation</div>
+            <div class="navbar__links">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">&nbsp;</a> <!-- Add an empty link to create space -->
+            </div>
+        </nav>
+        <form action="{{url_for('after')}}" enctype="multipart/form-data" method="POST">
+            <div id="uploadFile_div">
+                <input type="file" name='file2' id="infileid" class="pqr">
+            </div>
+            <br>
+            <br>
+            <button type="submit" class="xyz">Generate Caption</button>
+            <button id="resetbtn" type="button" class="clear-image">Clear Image</button>
+        </form>
+    </div>
+</body>
+</html>
