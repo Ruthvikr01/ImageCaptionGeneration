@@ -1,9 +1,6 @@
-We used flickr8k data set to train the model it contains images and comments.
+The Video link is posted in my google drive,
+### **CLICK BELOW link**
 
-we will be using the Flickr_8K dataset. There are also other big datasets like Flickr_30K and MSCOCO dataset but it can 
-take weeks just to train the network so we will be using a small Flickr8k dataset.
+[CLICK ME](https://drive.google.com/file/d/1UNhINgJ_cwBJmTNHAE5nJ7vXZRErmSKa/view?usp=sharing )
 
-the link for this dataset is:
-https://www.kaggle.com/datasets/adityajn105/flickr8k
-
-[DATA SET LINK](https://www.kaggle.com/datasets/adityajn105/flickr8k)
+LINK:  https://drive.google.com/file/d/1UNhINgJ_cwBJmTNHAE5nJ7vXZRErmSKa/view?usp=sharing 
